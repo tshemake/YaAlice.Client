@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using YaAlice.Webhook.Infrastructure.Middlewares;
 
 namespace YaAlice.Webhook
 {
@@ -34,6 +35,9 @@ namespace YaAlice.Webhook
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHealthMiddleware();
+            app.UsePerformanceLoggingMiddleware();
 
             app.UseMvc();
         }

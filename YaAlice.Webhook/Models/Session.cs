@@ -64,6 +64,7 @@ namespace YaAlice.Webhook.Models
         /// Яндекс.Диалоги присвоят отдельный user_id каждому из этих приложений
         /// </remarks>
         [JsonProperty("user_id")]
+        [MaxLength(64)]
         public string UserId { get; set; }
     }
 }
